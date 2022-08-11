@@ -19,8 +19,71 @@
 	background: #FFFFFF;
 	box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1);
 	padding: 20px;
-	h2{
-		margin: 0;
+	.wrap{
+		h2{
+			margin: 0;
+		}
+	}
+}
+.drawerBox{
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	width: 420px;
+	height: 100%;
+	right: 0;
+	background: #FFFFFF;
+	box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.1);
+	padding: 20px;
+	.boxClear{
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		// align-self: center;
+		margin: auto 0;
+		img{
+			margin-bottom: 20px;
+		}
+		.title{
+			font-style: normal;
+			font-weight: 600;
+			font-size: 22px;
+			line-height: 27px;
+			color: #000000;
+			margin-bottom: 10px;
+		}
+		.text{
+			width: 285px;
+			font-style: normal;
+			font-weight: 400;
+			font-size: 16px;
+			line-height: 24px;
+			text-align: center;
+			color: #000000;
+			opacity: 0.4;
+			margin-bottom: 40px;
+		}
+		.buttonGreen{
+			width: 245px;
+			height: 55px;
+			padding-bottom: 20px;
+			background-color: #9DD458;
+			border-radius: 18px;
+			border: none;
+			font-style: normal;
+			font-weight: 600;
+			font-size: 16px;
+			line-height: 19px;
+			text-align: center;
+			color: #FFFFFF;
+			cursor: pointer;
+			
+			img{
+				position: relative;
+				left: -160px;
+				top: 20px;
+			}
+		}
 	}
 }
 .items{
@@ -110,6 +173,11 @@
 
 .greenButton{
 	position: relative;
+	&:disabled{
+		animation: button-loading 0.6s ease-in-out infinite;
+		background-color: #bebebe;
+		cursor: pointer;
+	}
 	&:hover{
 		img{
 			transform: translateX(5px);
@@ -117,5 +185,17 @@
 	}
 	img{
 		transition: transform 0.1s ease-in-out;
+	}
+}
+
+@keyframes button-loading {
+	0%{
+		opacity: 1;
+	}
+	50%{
+		opacity: 0.7;
+	}
+	100%{
+		opacity: 1;
 	}
 }
